@@ -1,0 +1,4 @@
+A simple android app which lets the user maintain a list of the tasks to be done.
+It uses Firebase as backend to store the tasks.
+The use of Firebase makes it a realtime app.
+ 
