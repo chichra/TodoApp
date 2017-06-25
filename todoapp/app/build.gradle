@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+
+    defaultConfig {
+        applicationId "com.example.aasf.todoapp"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        generatedDensities = []
+        multiDexEnabled true
+    }
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/BCKEY.DSA'
+            exclude 'AUTHORS'
+        }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:24.0.0'
+
+
+    compile 'com.google.android.gms:play-services:9.6.1'
+
+
+    compile 'com.firebase:firebase-client-android:2.3.1'
+    compile 'com.google.firebase:firebase-core:9.6.1'
+    compile 'com.google.firebase:firebase-database:9.6.1'
+    compile 'com.google.firebase:firebase-storage:9.6.1'
+    compile 'com.google.firebase:firebase-crash:9.6.1'
+    compile 'com.google.firebase:firebase-auth:9.6.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.1'
+    compile 'com.google.firebase:firebase-config:9.6.1'
+    compile 'com.google.firebase:firebase-invites:9.6.1'
+    compile 'com.google.firebase:firebase-ads:9.6.1'
+    compile 'com.firebaseui:firebase-ui:0.6.1'
+
+
+
+
+
+    compile 'com.squareup.okio:okio:1.10.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:multidex:1.0.1'
+
+
+}
+apply plugin: 'com.google.gms.google-services'
